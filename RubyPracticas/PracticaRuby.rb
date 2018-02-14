@@ -1,0 +1,2 @@
+#imprimir
+puts "hola mundo"

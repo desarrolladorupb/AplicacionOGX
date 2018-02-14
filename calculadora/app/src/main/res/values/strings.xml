@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">calculadora</string>
+
+    <string name="login_correo">Correo</string>
+</resources>

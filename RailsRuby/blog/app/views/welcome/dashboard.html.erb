@@ -1,0 +1,40 @@
+<div style="margin: 30px 250px;">
+  <table class="table">
+    <thead class="thead-inverse">
+    <tr>
+      <th>
+        Campo N°1
+      </th>
+      <th>
+        Campo N°2
+      </th>
+      <th>
+        Eliminar
+      </th>
+      <th>
+        Publicar
+      </th>
+    </tr>
+    </thead>
+    <% @articles.each do |article| %>
+      <tbody>
+      <tr>
+        <td>
+          <%= link_to article.title, article %>
+        </td>
+        <td>
+          <%= article.body %>
+        </td>
+        <td>
+          <%= link_to "Eliminar", article, class:"red", method: :delete %>
+        </td>
+        <% if article.may_publish? %>
+        <td>
+          <%= link_to "Publicar", "/articles/#{article.id}/publish", class:"blue", method: :put %>
+        </td>
+          <% end %>
+      </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>
